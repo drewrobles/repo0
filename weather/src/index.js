@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <Latitude />
     <Longitude />
-    {/* <Weather /> */}
+    <Weather />
   </React.StrictMode>
 );
 

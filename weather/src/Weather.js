@@ -20,6 +20,7 @@ const Weather = () => {
   useEffect(() => {
     const lat = localStorage.getItem("lat");
     const lon = localStorage.getItem("lon");
+    console.log(lat)
     const url = `${baseUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}`;
     fetch(url)
       .then((response) => response.json())

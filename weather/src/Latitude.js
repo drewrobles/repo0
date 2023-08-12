@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 const Latitude = () => {
-  const [latitude, setLatitude] = useState("20");
   const useLocalStorage = (key, item) => {
     const setItem = (item) => localStorage.setItem(key, item);
     const getItem = () => localStorage.getItem(key);
     setItem(item);
     return [getItem, setItem];
   };
-  const [getLat, setLat] = useLocalStorage("lat", latitude);
+  const [getLat, setLat] = useLocalStorage("lat", localStorage.getItem('lat'));
+  const [latitude, setLatitude] = useState(getLat());
   return (
     <>
       <label>
