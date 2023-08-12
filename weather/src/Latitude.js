@@ -1,13 +1,11 @@
 import { useState } from "react";
+import library from "./library";
 
 const Latitude = () => {
-  const useLocalStorage = (key, item) => {
-    const setItem = (item) => localStorage.setItem(key, item);
-    const getItem = () => localStorage.getItem(key);
-    setItem(item);
-    return [getItem, setItem];
-  };
-  const [getLat, setLat] = useLocalStorage("lat", localStorage.getItem('lat'));
+  const [getLat, setLat] = library.useLocalStorage(
+    "lat",
+    localStorage.getItem("lat")
+  );
   const [latitude, setLatitude] = useState(getLat());
   return (
     <>
