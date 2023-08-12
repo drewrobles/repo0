@@ -9,10 +9,8 @@ const Weather = () => {
   const getTemperature = response => {
     if (response.cod === 200) {
       return Math.trunc(convertKelvinToFahrenheit(response?.main?.temp).toString()) + '°'
-    } else if (response.cod === 400) {
-      return response.message
     } else {
-      return ''
+      return response?.message ? response.message : ""
     }
   }
   useEffect(() => {
