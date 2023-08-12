@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import { useState } from "react";
 import library from "./library";
 
-const LocalStorageTextField = props => {
+export const LocalStorageTextField = props => {
   const [getLocalStorageValue, setLocalStorageValue] = library.useLocalStorage(
     props.label,
     localStorage.getItem(props.label)
@@ -25,4 +26,10 @@ const LocalStorageTextField = props => {
   );
 };
 
-export default LocalStorageTextField;
+LocalStorageTextField.propTypes = {
+  label: PropTypes.string,
+};
+
+LocalStorageTextField.defaultProps = {
+  label: '',
+};

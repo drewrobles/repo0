@@ -1,4 +1,4 @@
-import LocalStorageTextField from './LocalStorageTextField'
+import { LocalStorageTextField } from './LocalStorageTextField'
 
 const Latitude = () => <LocalStorageTextField label="lat"/>
 
