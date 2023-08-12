@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-const Form = () => {
+const Latitude = () => {
   const [latitude, setLatitude] = useState("20");
-  const latitudeAsNumber = Number(latitude);
   const useLocalStorage = (key, item) => {
     const setItem = (item) => localStorage.setItem(key, item);
     const getItem = () => localStorage.getItem(key);
@@ -28,4 +27,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Latitude;

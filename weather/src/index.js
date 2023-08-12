@@ -3,13 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 // import App from './App';
 import Weather from "./Weather";
-import Form from "./Form";
+import Latitude from "./Latitude";
+import Longitude from "./Longitude";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Form />
+    <Latitude />
+    <Longitude />
     {/* <Weather /> */}
   </React.StrictMode>
 );
