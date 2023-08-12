@@ -1,14 +1,17 @@
-import { useEffect } from 'react'
-const api = "API_KEY"
-const lat = 34.2783
-const lon = -119.2932
+import { useState, useEffect } from 'react'
+
 function Weather () {
+  const [data, setData] = useState('')
+  const baseUrl = 'http://api.openweathermap.org/data/2.5/weather'
+  const apiKey = 'b640c4354f674bcbe35d4c1f310d6a1a'
   useEffect(() => {
-    const base = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api}`
-    fetch(base).then((response) => response.json())
-    .then((data) => { console.log(data) })
-  })
-  return <div class="container">Ventura</div>
+    const lat = 34.2783
+    const lon = -119.2932
+    const url = `${baseUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    fetch(url).then((response) => response.json())
+    .then((responseJson) => { setData(JSON.stringify(responseJson)) })
+  }, [])
+  return <div>{data}</div>
 }
 
 export default Weather
