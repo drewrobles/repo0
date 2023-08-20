@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+import useLocalStorage from "./useLocalStorage";
+ 
+const App = () => {
+    const [show, setShow] = useLocalStorage("show", true);
+    return (
+        <div style={{ display: "grid", placeItems: "center" }}>
+            <h1 style={{ color: "#11b5e5" }}>useLocalStorage</h1>
+            <div>Store, retrieve, and synchronize data from the browser’s localStorage API with useLocalStorage</div>
+            <h4>{show ? 'true' : 'false'}</h4>
+            <button onClick={() => setShow((prev) => !prev)}>
+                Toggle</button>
+        </div>
+    );
+};
+ 
 export default App;
